@@ -13,7 +13,10 @@ import Understanding from '../Understanding/Understanding';
 
 function App() {
 
+  const currentComments = useSelector(store => store.commentsReducer);
   const currentFeeling = useSelector(store => store.feelingReducer);
+  const currentSupport = useSelector(store => store.supportReducer);
+  const currentUnderstanding = useSelector(store => store.understandingReducer);
 
   return (
     <div className='App'>
@@ -21,9 +24,9 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
         <h5>Feeling: {currentFeeling}</h5>
-        <h5>Understanding:</h5>
-        <h5>Support:</h5>
-        <h5>Comments:</h5>
+        <h5>Understanding: {currentUnderstanding}</h5>
+        <h5>Support: {currentSupport}</h5>
+        <h5>Comments: {currentComments}</h5>
       </header>
 
       <HashRouter>

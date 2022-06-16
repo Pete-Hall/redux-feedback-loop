@@ -8,10 +8,13 @@ import {Provider} from 'react-redux';
 
 const commentsReducer = (state = '', action) => {
   console.log('in commentsReducer:', action);
+  if(action.type === 'SET_COMMENTS') {
+    state = action.payload;
+  }
   return state;
 }
 
-const feelingReducer = (state = '', action) => {
+const feelingReducer = (state = null, action) => {
   console.log('in feelingReducer:', action);
   if(action.type === 'SET_FEELING') {
     state = action.payload;
@@ -19,13 +22,19 @@ const feelingReducer = (state = '', action) => {
   return state;
 }
 
-const supportReducer = (state = '', action) => {
+const supportReducer = (state = null, action) => {
   console.log('in supportReducer:', action);
+  if(action.type === 'SET_SUPPORT') {
+    state = action.payload;
+  }
   return state;
 }
 
-const understandingReducer = (state = '', action) => {
+const understandingReducer = (state = null, action) => {
   console.log('in understandingReducer:', action);
+  if(action.type === 'SET_UNDERSTANDING') {
+    state = action.payload;
+  }
   return state;
 }
 

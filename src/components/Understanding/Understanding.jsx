@@ -1,18 +1,25 @@
 import {useState} from 'react';
+import {useDispatch} from 'react-redux';
 
 function Understanding(props) {
-  // template hook
-  const [hook, setHook] = useState(null);
 
-  const handleHook = () => {
-    setHook(event.target.value);
+  const [understanding, setUnderstanding] = useState(0);
+  const dispatch = useDispatch();
+
+  const changeUnderstanding = () => {
+    setUnderstanding(event.target.value);
+  }
+
+  const sendUnderstanding = () => {
+    console.log('in sendUnderstanding');
+    dispatch({type: 'SET_UNDERSTANDING', payload: understanding});
   }
 
   return(
     <div>
-      <h2>Understanding</h2>
-      <p><button onClick={handleHook}>Click</button> Clicks: {hook}</p>
-      <p>Props: {JSON.stringify(props)}</p>
+      <h2>How well are you understanding the content?</h2>
+      <input type="number" placeholder="Understanding?" onChange={changeUnderstanding}/>
+      <button onClick={sendUnderstanding}>NEXT</button>
     </div>
   );
 }

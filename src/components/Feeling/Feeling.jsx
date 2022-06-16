@@ -2,7 +2,7 @@ import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 
 function Feeling(props) {
-  // template hook
+
   const [feeling, setFeeling] = useState(0);
   const dispatch = useDispatch();
 
