@@ -11,6 +11,22 @@ function Review() {
   const currentSupport = useSelector(store => store.supportReducer);
   const currentUnderstanding = useSelector(store => store.understandingReducer);
 
+  const editComments = () => {
+    history.push('/comments');
+  }
+
+  const editFeelings = () => {
+    history.push('/feeling');
+  }
+
+  const editSupport = () => {
+    history.push('/support');
+  }
+
+  const editUnderstanding = () => {
+    history.push('/understanding');
+  }
+
   const submitFeedback = () => {
     console.log('in submitFeedback');
     let newFeedback = {
@@ -19,7 +35,6 @@ function Review() {
       support: currentSupport,
       comments: currentComments
     };
-    // axios post  here
     axios.post('/feedback', newFeedback).then((response) => {
       console.log(response.data);
       history.push('/submitted');
@@ -27,16 +42,15 @@ function Review() {
       console.log(err);
       alert('error adding feedback');
     })
-    
   }
 
   return(
     <div>
       <h2>Review Your Feedback</h2>
-      <p>Feelings: {currentFeeling}</p>
-      <p>Understanding: {currentUnderstanding}</p>
-      <p>Support: {currentSupport}</p>
-      <p>Comments: {currentComments}</p>
+      <p>Feelings: {currentFeeling} <button onClick={editFeelings}>Edit</button></p>
+      <p>Understanding: {currentUnderstanding} <button onClick={editUnderstanding}>Edit</button></p>
+      <p>Support: {currentSupport} <button onClick={editSupport}>Edit</button></p>
+      <p>Comments: {currentComments} <button onClick={editComments}>Edit</button></p>
       <button onClick={submitFeedback}>SUBMIT</button>
     </div>
   );
