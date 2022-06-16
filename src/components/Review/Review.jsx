@@ -1,18 +1,20 @@
-import {useState} from 'react';
+import {useSelector} from 'react-redux';
 
-function Review(props) {
-  // template hook
-  const [hook, setHook] = useState(null);
+function Review() {
 
-  const handleHook = () => {
-    setHook(event.target.value);
-  }
+  const currentComments = useSelector(store => store.commentsReducer);
+  const currentFeeling = useSelector(store => store.feelingReducer);
+  const currentSupport = useSelector(store => store.supportReducer);
+  const currentUnderstanding = useSelector(store => store.understandingReducer);
 
   return(
     <div>
-      <h2>Review</h2>
-      <p><button onClick={handleHook}>Click</button> Clicks: {hook}</p>
-      <p>Props: {JSON.stringify(props)}</p>
+      <h2>Review Your Feedback</h2>
+      <p>Feelings: {currentFeeling}</p>
+      <p>Understanding: {currentUnderstanding}</p>
+      <p>Support: {currentSupport}</p>
+      <p>Comments: {currentComments}</p>
+      <button>SUBMIT</button>
     </div>
   );
 }

@@ -1,18 +1,13 @@
-import {useState} from 'react';
 
-function Submitted(props) {
-  // template hook
-  const [hook, setHook] = useState(null);
 
-  const handleHook = () => {
-    setHook(event.target.value);
-  }
+function Submitted() {
+
+
 
   return(
     <div>
-      <h2>Submitted</h2>
-      <p><button onClick={handleHook}>Click</button> Clicks: {hook}</p>
-      <p>Props: {JSON.stringify(props)}</p>
+      <h2>Thank you!</h2>
+      <button>Leave New Feedback</button>
     </div>
   );
 }
