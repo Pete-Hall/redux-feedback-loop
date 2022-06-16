@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 
-const commentsReducer = (state = null, action) => { // if the input is changed and then deleted, sends an empty string. change null to ''?
+const commentsReducer = (state = '', action) => { // if the input is changed and then deleted, sends an empty string. change null to ''?
   console.log('in commentsReducer:', action);
   if(action.type === 'SET_COMMENTS') {
     state = action.payload;
@@ -16,7 +16,7 @@ const commentsReducer = (state = null, action) => { // if the input is changed a
   return state;
 }
 
-const feelingReducer = (state = null, action) => {
+const feelingReducer = (state = '', action) => {
   console.log('in feelingReducer:', action);
   if(action.type === 'SET_FEELING') {
     state = action.payload;
@@ -26,7 +26,7 @@ const feelingReducer = (state = null, action) => {
   return state;
 }
 
-const supportReducer = (state = null, action) => {
+const supportReducer = (state = '', action) => {
   console.log('in supportReducer:', action);
   if(action.type === 'SET_SUPPORT') {
     state = action.payload;
@@ -36,7 +36,7 @@ const supportReducer = (state = null, action) => {
   return state;
 }
 
-const understandingReducer = (state = null, action) => {
+const understandingReducer = (state = '', action) => {
   console.log('in understandingReducer:', action);
   if(action.type === 'SET_UNDERSTANDING') {
     state = action.payload;

@@ -1,12 +1,14 @@
 import {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
 function Understanding() {
 
-  const [understanding, setUnderstanding] = useState(null);
+  const [understanding, setUnderstanding] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
+  const currentUnderstanding = useSelector(store => store.understandingReducer);
+
 
   const changeUnderstanding = () => {
     setUnderstanding(event.target.value);
@@ -14,7 +16,11 @@ function Understanding() {
 
   const sendUnderstanding = () => {
     console.log('in sendUnderstanding');
-    if(understanding === null) {
+    if(understanding === '' && currentUnderstanding) {
+      dispatch({type: 'SET_UNDERSTANDING', payload: currentUnderstanding});
+      history.push('/support');
+    }
+    else if(understanding === '') {
       alert('Please input a valid score.');
     } else {
       dispatch({type: 'SET_UNDERSTANDING', payload: understanding});
@@ -25,7 +31,7 @@ function Understanding() {
   return(
     <div>
       <h2>How well are you understanding the content?</h2>
-      <input type="number" placeholder="Understanding?" onChange={changeUnderstanding}/>
+      <input type="number" placeholder={currentUnderstanding} onChange={changeUnderstanding}/>
       <button onClick={sendUnderstanding}>NEXT</button>
     </div>
   );

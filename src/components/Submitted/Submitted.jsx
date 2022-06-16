@@ -8,7 +8,7 @@ function Submitted() {
 
   const restartFeedback = () => {
     console.log('in restartFeedback');
-    dispatch({type: 'SET_RESTART', payload: null});
+    dispatch({type: 'SET_RESTART', payload: ''});
     history.push('/feeling');
   }
 
