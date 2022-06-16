@@ -15,6 +15,8 @@ function Submitted() {
   return(
     <div>
       <h2>Thank you!</h2>
+      <img src="../images/goat_small.jpg"/>
+      <p>The goat of feedback is pleased.</p>
       <button onClick={restartFeedback}>Leave New Feedback</button>
     </div>
   );
