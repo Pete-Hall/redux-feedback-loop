@@ -1,18 +1,25 @@
 import {useState} from 'react';
+import {useDispatch} from 'react-redux';
 
-function Support(props) {
-  // template hook
-  const [hook, setHook] = useState(null);
+function Support() {
 
-  const handleHook = () => {
-    setHook(event.target.value);
+  const [support, setSupport] = useState(0);
+  const dispatch = useDispatch();
+
+  const changeSupport = () => {
+    setSupport(event.target.value);
+  }
+
+  const sendSupport = () => {
+    console.log('in sendSupport');
+    dispatch({type: 'SET_SUPPORT', payload: support});
   }
 
   return(
     <div>
-      <h2>Support</h2>
-      <p><button onClick={handleHook}>Click</button> Clicks: {hook}</p>
-      <p>Props: {JSON.stringify(props)}</p>
+      <h2>How well are you being supported?</h2>
+      <input type="number" placeholder="Support?" onChange={changeSupport}/>
+      <button onClick={sendSupport}>NEXT</button>
     </div>
   );
 }

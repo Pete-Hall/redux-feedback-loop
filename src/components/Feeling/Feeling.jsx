@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 
-function Feeling(props) {
+function Feeling() {
 
   const [feeling, setFeeling] = useState(0);
   const dispatch = useDispatch();

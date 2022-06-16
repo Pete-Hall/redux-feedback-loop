@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 
-function Understanding(props) {
+function Understanding() {
 
   const [understanding, setUnderstanding] = useState(0);
   const dispatch = useDispatch();
