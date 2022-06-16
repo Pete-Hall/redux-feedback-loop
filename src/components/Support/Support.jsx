@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 
 function Support() {
 
-  const [support, setSupport] = useState(0);
+  const [support, setSupport] = useState(null);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -14,8 +14,12 @@ function Support() {
 
   const sendSupport = () => {
     console.log('in sendSupport');
-    dispatch({type: 'SET_SUPPORT', payload: support});
-    history.push('/comments');
+    if(support === null) {
+      alert('Please input a valid score.')
+    } else {
+      dispatch({type: 'SET_SUPPORT', payload: support});
+      history.push('/comments');
+    }
   }
 
   return(

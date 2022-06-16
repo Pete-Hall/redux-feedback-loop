@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 
 function Feeling() {
 
-  const [feeling, setFeeling] = useState(0);
+  const [feeling, setFeeling] = useState(null);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -15,8 +15,12 @@ function Feeling() {
 
   const sendFeeling = () => {
     console.log('in sendFeeling');
-    dispatch({type: 'SET_FEELING', payload: feeling});
-    history.push('/understanding');
+    if(feeling === null) {
+      alert('Please input a valid score.');
+    } else {
+      dispatch({type: 'SET_FEELING', payload: feeling});
+      history.push('/understanding');
+    }
   }
 
   return(

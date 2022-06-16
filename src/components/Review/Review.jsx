@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
@@ -12,7 +13,21 @@ function Review() {
 
   const submitFeedback = () => {
     console.log('in submitFeedback');
-    history.push('/submitted');
+    let newFeedback = {
+      feeling: currentFeeling,
+      understanding: currentUnderstanding,
+      support: currentSupport,
+      comments: currentComments
+    };
+    // axios post  here
+    axios.post('/feedback', newFeedback).then((response) => {
+      console.log(response.data);
+      history.push('/submitted');
+    }).catch((err) => {
+      console.log(err);
+      alert('error adding feedback');
+    })
+    
   }
 
   return(

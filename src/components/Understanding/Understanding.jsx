@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 
 function Understanding() {
 
-  const [understanding, setUnderstanding] = useState(0);
+  const [understanding, setUnderstanding] = useState(null);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -14,8 +14,12 @@ function Understanding() {
 
   const sendUnderstanding = () => {
     console.log('in sendUnderstanding');
-    dispatch({type: 'SET_UNDERSTANDING', payload: understanding});
-    history.push('/support');
+    if(understanding === null) {
+      alert('Please input a valid score.');
+    } else {
+      dispatch({type: 'SET_UNDERSTANDING', payload: understanding});
+      history.push('/support');
+    }
   }
 
   return(
