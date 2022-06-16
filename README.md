@@ -11,13 +11,14 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 Work from client-side --> server-side
 
 Components:
-Start (maybe, not necessary)
+_taco
+(Start (maybe, not necessary))
 Feeling
 Understanding
 Support
 Comments
 Review
-Submitted
+Submitted (option to take survey again, resetting data)
 
 hooks - values, setValues (onChange for inputs)
 onClicks - data validation (alert if fails, clear in puts if passes), dispatch to appropriate reducer, history.push(NextComponent)
