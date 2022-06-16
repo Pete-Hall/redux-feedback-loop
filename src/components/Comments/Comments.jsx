@@ -1,18 +1,25 @@
 import {useState} from 'react';
+import {useDispatch} from 'react-redux';
 
-function Comments(props) {
-  // template hook
-  const [hook, setHook] = useState(null);
+function Comments() {
 
-  const handleHook = () => {
-    setHook(event.target.value);
+  const [comments, setComments] = useState('');
+  const dispatch = useDispatch();
+
+  const changeComments = () => {
+    setComments(event.target.value);
+  }
+
+  const sendComments = () => {
+    console.log('in sendComments');
+    dispatch({type: 'SET_COMMENTS', payload: comments});
   }
 
   return(
     <div>
-      <h2>Comments</h2>
-      <p><button onClick={handleHook}>Click</button> Clicks: {hook}</p>
-      <p>Props: {JSON.stringify(props)}</p>
+      <h2>Any comments you want to leave?</h2>
+      <input type="text" placeholder="Comments" onChange={changeComments}/>
+      <button onClick={sendComments}>NEXT</button>
     </div>
   );
 }
