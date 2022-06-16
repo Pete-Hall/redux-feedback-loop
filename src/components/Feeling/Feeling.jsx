@@ -32,6 +32,12 @@ function Feeling() {
       <h2>How are you feeling today?</h2>
       <input type="number" placeholder={currentFeeling} onChange={changeFeeling}/>
       <button onClick={sendFeeling}>NEXT</button>
+      {
+        currentFeeling ?
+        <p> (You can click the next button to save your previously inputted answer or enter a new answer)</p>
+        :
+        <br/>
+      }
     </div>
   );
 }

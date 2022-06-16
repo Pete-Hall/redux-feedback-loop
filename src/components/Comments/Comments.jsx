@@ -30,6 +30,12 @@ function Comments() {
       <h2>Any comments you want to leave?</h2>
       <input type="text" placeholder={currentComments} onChange={changeComments}/>
       <button onClick={sendComments}>NEXT</button>
+      {
+        currentComments ?
+        <p> (You can click the next button to save your previously inputted answer or enter a new answer)</p>
+        :
+        <br/>
+      }
     </div>
   );
 }

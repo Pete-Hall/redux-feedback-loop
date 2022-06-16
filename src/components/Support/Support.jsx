@@ -31,6 +31,12 @@ function Support() {
       <h2>How well are you being supported?</h2>
       <input type="number" placeholder={currentSupport} onChange={changeSupport}/>
       <button onClick={sendSupport}>NEXT</button>
+      {
+        currentSupport ?
+        <p> (You can click the next button to save your previously inputted answer or enter a new answer)</p>
+        :
+        <br/>
+      }
     </div>
   );
 }

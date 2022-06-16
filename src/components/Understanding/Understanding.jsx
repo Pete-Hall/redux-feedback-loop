@@ -33,6 +33,12 @@ function Understanding() {
       <h2>How well are you understanding the content?</h2>
       <input type="number" placeholder={currentUnderstanding} onChange={changeUnderstanding}/>
       <button onClick={sendUnderstanding}>NEXT</button>
+      {
+        currentUnderstanding ?
+        <p> (You can click the next button to save your previously inputted answer or enter a new answer)</p>
+        :
+        <br/>
+      }
     </div>
   );
 }
