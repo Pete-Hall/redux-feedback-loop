@@ -33,7 +33,7 @@ function App() {
         <Route path = "/" exact>
           <Feeling />
         </Route>
-        <Route path = "/feeling" exact>
+        <Route path = "/feeling">
           <Feeling />
         </Route>
         <Route path = "/understanding">

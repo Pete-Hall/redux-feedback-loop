@@ -1,10 +1,12 @@
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 function Understanding() {
 
   const [understanding, setUnderstanding] = useState(0);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const changeUnderstanding = () => {
     setUnderstanding(event.target.value);
@@ -13,6 +15,7 @@ function Understanding() {
   const sendUnderstanding = () => {
     console.log('in sendUnderstanding');
     dispatch({type: 'SET_UNDERSTANDING', payload: understanding});
+    history.push('/support');
   }
 
   return(
