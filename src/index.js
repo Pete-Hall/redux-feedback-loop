@@ -13,6 +13,9 @@ const commentsReducer = (state = '', action) => {
 
 const feelingReducer = (state = '', action) => {
   console.log('in feelingReducer:', action);
+  if(action.type === 'SET_FEELING') {
+    state = action.payload;
+  }
   return state;
 }
 

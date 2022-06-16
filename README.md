@@ -9,6 +9,8 @@ Your project description goes here. What problem did you solve? How did you solv
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
 
 Work from client-side --> server-side
+Will need to set up database in Postico
+Will need to use History to move to next page
 
 Components:
 _taco
@@ -22,6 +24,7 @@ Submitted (option to take survey again, resetting data)
 
 hooks - values, setValues (onChange for inputs)
 onClicks - data validation (alert if fails, clear in puts if passes), dispatch to appropriate reducer, history.push(NextComponent)
+inputs (type=number)
 
 Reducers: (in header, show data in the reducers as we input it to test)
 Feeling
@@ -36,4 +39,5 @@ Understanding
 Support
 Comments
 Review
+Submitted
 
