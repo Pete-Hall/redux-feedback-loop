@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
 
-const commentsReducer = (state = '', action) => { // if the input is changed and then deleted, sends an empty string. change null to ''?
+const commentsReducer = (state = '', action) => { // if the input is changed and then deleted, sends an empty string. change null to ''? empty string is falsey but it is a datatype. null is null
   console.log('in commentsReducer:', action);
   if(action.type === 'SET_COMMENTS') {
     state = action.payload;
