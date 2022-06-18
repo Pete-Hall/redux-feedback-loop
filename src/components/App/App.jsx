@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import { useState, useEffect} from 'react';
 import {Route, HashRouter} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 
@@ -18,6 +19,8 @@ function App() {
   const currentFeeling = useSelector(store => store.feelingReducer);
   const currentSupport = useSelector(store => store.supportReducer);
   const currentUnderstanding = useSelector(store => store.understandingReducer);
+
+
 
   return (
     <div className='App'>
