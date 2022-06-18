@@ -55,5 +55,25 @@ const store = createStore(
   })
 )
 
+///// TRYING TO UNDERSTAND THE ROOT REDUCER /////
+// const appReducer = combineReducers({
+//   commentsReducer,
+//   feelingReducer,
+//   supportReducer,
+//   understandingReducer
+// })
+
+// const rootReducer = (state, action) => {
+//   console.log('in rootReducer');
+//   if(action.type === 'RESET_SCORES') {
+//    state = action.payload;
+//   }
+//   return appReducer(state, action)
+// }
+
+// const store = createStore(
+//   rootReducer
+//  )
+
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
