@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import { useState, useEffect} from 'react';
 import {Route, HashRouter} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 

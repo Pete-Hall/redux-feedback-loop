@@ -22,14 +22,24 @@ function Admin(props) {
   }
 
   return(
-    <div>
-      <h2>Admin</h2>
-      {
-        feedbacks.map(feedback => (
-          <AdminFeedback myFeedback = {feedback}/>
-        ))
-      }
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Feeling</th>
+          <th>Comprehension</th>
+          <th>Support</th>
+          <th>Comments</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+        feedbacks.map((feedback, index) => (
+          <AdminFeedback key = {index} myFeedback = {feedback}/>
+          ))
+        }
+      </tbody>
+    </table>
   );
 }
 
