@@ -8,6 +8,7 @@ function AdminFeedback(props) {
       <td>{props.myFeedback.understanding}</td>
       <td>{props.myFeedback.support}</td>
       <td>{props.myFeedback.comments}</td>
+      <td></td>
     </tr>
   );
 }

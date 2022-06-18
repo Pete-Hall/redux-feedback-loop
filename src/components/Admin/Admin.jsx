@@ -1,8 +1,9 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react';
 import AdminFeedback from '../AdminFeedback/AdminFeedback';
+import './Admin.css';
 
-function Admin(props) {
+function Admin() {
 
   const [feedbacks, setFeedbacks] = useState([]);
 
