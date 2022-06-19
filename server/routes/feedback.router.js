@@ -38,4 +38,16 @@ router.post('/', (req, res) => {
   })
 })
 
+router.put('/flag/:id', (req, res) => {
+  console.log('in /feedback/flag', req.params);
+  let queryString = `UPDATE feedback SET flagged=NOT flagged WHERE id=$1;`;
+  let values = [req.params.id];
+  pool.query(queryString, values).then((results) => {
+    res.sendStatus(200);
+  }).catch((err) => {
+    console.log(err);
+    res.sendStatus(500);
+  })
+})
+
 module.exports = router;

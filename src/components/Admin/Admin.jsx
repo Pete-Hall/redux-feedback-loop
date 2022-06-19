@@ -31,7 +31,7 @@ function Admin() {
           <th>Support</th>
           <th>Comments</th>
           <th>Delete</th>
-          <th>Flagged?</th>
+          <th>Flag</th>
         </tr>
       </thead>
       <tbody>

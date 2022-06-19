@@ -21,10 +21,20 @@ function AdminFeedback(props) {
     }
   }
 
-  
   // npm install @mui/icons-material
   // import flag filled and flag outlined
   // ternary for value of flagged. true - show flag filled. false - show flag outlined. on click of icon, function that reverses boolean in db for flagged.
+
+  const flagFeedback = () => {
+    console.log('in flagFeedback:', props.myFeedback.id);
+    axios.put(`/feedback/flag/${props.myFeedback.id}`).then((response) => {
+      console.log(response);
+      props.getFeedback();
+    }).catch((err) => {
+      console.log(err);
+      alert('error flagging feedback');
+    })
+  }
   
   return( 
     <tr>
@@ -33,8 +43,14 @@ function AdminFeedback(props) {
       <td>{props.myFeedback.support}</td>
       <td>{props.myFeedback.comments}</td>
       <td><button onClick={deleteFeedback}>Delete</button></td>
-      {/* <td>{JSON.stringify(props.myFeedback.flagged)}</td> */}
-      <td><FlagOutlinedIcon /></td>
+      <td>
+        {
+          props.myFeedback.flagged ?
+          <FlagIcon onClick={flagFeedback} />
+          :
+          <FlagOutlinedIcon onClick={flagFeedback} />
+        }
+      </td>
     </tr>
   );
 }
