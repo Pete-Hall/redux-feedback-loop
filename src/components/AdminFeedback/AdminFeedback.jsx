@@ -1,6 +1,7 @@
 import axios from 'axios';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import FlagIcon from '@mui/icons-material/Flag';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 function AdminFeedback(props) {
 
@@ -21,10 +22,6 @@ function AdminFeedback(props) {
     }
   }
 
-  // npm install @mui/icons-material
-  // import flag filled and flag outlined
-  // ternary for value of flagged. true - show flag filled. false - show flag outlined. on click of icon, function that reverses boolean in db for flagged.
-
   const flagFeedback = () => {
     console.log('in flagFeedback:', props.myFeedback.id);
     axios.put(`/feedback/flag/${props.myFeedback.id}`).then((response) => {
@@ -42,7 +39,7 @@ function AdminFeedback(props) {
       <td>{props.myFeedback.understanding}</td>
       <td>{props.myFeedback.support}</td>
       <td>{props.myFeedback.comments}</td>
-      <td><button onClick={deleteFeedback}>Delete</button></td>
+      <td><DeleteForeverIcon onClick={deleteFeedback} /></td>
       <td>
         {
           props.myFeedback.flagged ?
