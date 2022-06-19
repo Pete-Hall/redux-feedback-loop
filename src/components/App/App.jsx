@@ -19,8 +19,6 @@ function App() {
   const currentSupport = useSelector(store => store.supportReducer);
   const currentUnderstanding = useSelector(store => store.understandingReducer);
 
-
-
   return (
     <div className='App'>
       <header className='App-header'>
