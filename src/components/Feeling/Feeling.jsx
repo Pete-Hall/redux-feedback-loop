@@ -2,6 +2,8 @@ import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
+import Button from '@mui/material/Button';
+
 function Feeling() {
 
   const [feeling, setFeeling] = useState('');
@@ -31,7 +33,7 @@ function Feeling() {
     <div>
       <h2>How are you feeling today?</h2>
       <input type="number" placeholder={currentFeeling} onChange={changeFeeling}/>
-      <button onClick={sendFeeling}>NEXT</button>
+      <Button onClick={sendFeeling}>NEXT</Button>
       {
         currentFeeling ?
         <p> (You can click the next button to save your previously inputted answer or enter a new answer)</p>

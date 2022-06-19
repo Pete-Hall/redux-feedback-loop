@@ -13,16 +13,26 @@ import Understanding from '../Understanding/Understanding';
 import Admin from '../Admin/Admin';
 
 import Typography from '@mui/material/Typography';
+import { createTheme, colors, ThemeProvider } from '@mui/material';
 
 
 function App() {
   
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: colors.orange[500]
+      }
+    }
+  });
+
   const currentComments = useSelector(store => store.commentsReducer);
   const currentFeeling = useSelector(store => store.feelingReducer);
   const currentSupport = useSelector(store => store.supportReducer);
   const currentUnderstanding = useSelector(store => store.understandingReducer);
 
   return (
+    <ThemeProvider theme={theme}>
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Feedback!</h1>
@@ -63,6 +73,7 @@ function App() {
         </Route>
       </HashRouter>
     </div>
+    </ThemeProvider>
   );
 }
 
