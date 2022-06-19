@@ -12,8 +12,11 @@ import Support from '../Support/Support';
 import Understanding from '../Understanding/Understanding';
 import Admin from '../Admin/Admin';
 
-function App() {
+import Typography from '@mui/material/Typography';
 
+
+function App() {
+  
   const currentComments = useSelector(store => store.commentsReducer);
   const currentFeeling = useSelector(store => store.feelingReducer);
   const currentSupport = useSelector(store => store.supportReducer);
@@ -28,6 +31,9 @@ function App() {
         <h5>Understanding: {currentUnderstanding}</h5>
         <h5>Support: {currentSupport}</h5>
         <h5>Comments: {currentComments}</h5>
+        <Typography variant='h5'>
+          This should be Roboto h5
+        </Typography>
       </header>
 
       <HashRouter>
