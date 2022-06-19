@@ -40,3 +40,5 @@ Support
 Comments
 Review
 Submitted
+
+Prompt the user to confirm prior to deleting the feedback from the database.

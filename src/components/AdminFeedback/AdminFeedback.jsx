@@ -4,13 +4,19 @@ function AdminFeedback(props) {
 
   const deleteFeedback = () => {
     console.log('in deleteFeedback:', props.myFeedback.id);
-    axios.delete(`/feedback/delete/${props.myFeedback.id}`).then((response) => {
-      console.log(response);
-      props.getFeedback();
-    }).catch((err) => {
-      console.log(err);
-      alert('error deleting feedback');
-    })
+    if(confirm('Are you sure you want to delete this feedback? This action cannot be undone.')) {
+      axios.delete(`/feedback/delete/${props.myFeedback.id}`).then((response) => {
+        console.log(response);
+        alert('Delete successful.');
+        props.getFeedback();
+      }).catch((err) => {
+        console.log(err);
+        alert('error deleting feedback');
+      })
+    }
+    else {
+      alert('You have not deleted that feedback');
+    }
   }
   
   return( 
@@ -20,6 +26,7 @@ function AdminFeedback(props) {
       <td>{props.myFeedback.support}</td>
       <td>{props.myFeedback.comments}</td>
       <td><button onClick={deleteFeedback}>Delete</button></td>
+      <td>{JSON.stringify(props.myFeedback.flagged)}</td>
     </tr>
   );
 }

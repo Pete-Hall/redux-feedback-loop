@@ -17,7 +17,7 @@ router.delete('/delete/:id', (req, res) => {
 
 router.get('/', (req, res) => {
   console.log('in /feedback GET');
-  let queryString = `SELECT * FROM feedback ORDER BY id DESC;`; // new feedback at top. order by descending
+  let queryString = `SELECT * FROM feedback ORDER BY id DESC;`; // new feedback shown at the top. order by descending
   pool.query(queryString).then((results) => {
     res.send(results.rows);
   }).catch((err) => {
