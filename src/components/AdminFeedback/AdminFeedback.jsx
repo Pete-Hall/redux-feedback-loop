@@ -1,6 +1,17 @@
-
+import axios from 'axios';
 
 function AdminFeedback(props) {
+
+  const deleteFeedback = () => {
+    console.log('in deleteFeedback:', props.myFeedback.id);
+    axios.delete(`/feedback/delete/${props.myFeedback.id}`).then((response) => {
+      console.log(response);
+      props.getFeedback();
+    }).catch((err) => {
+      console.log(err);
+      alert('error deleting feedback');
+    })
+  }
   
   return( 
     <tr>
@@ -8,7 +19,7 @@ function AdminFeedback(props) {
       <td>{props.myFeedback.understanding}</td>
       <td>{props.myFeedback.support}</td>
       <td>{props.myFeedback.comments}</td>
-      <td></td>
+      <td><button onClick={deleteFeedback}>Delete</button></td>
     </tr>
   );
 }

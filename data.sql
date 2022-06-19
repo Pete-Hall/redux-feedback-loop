@@ -20,3 +20,5 @@ VALUES (4, 4, 5, 'Doing Great!');
 -- CRUD tests
 INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);
 SELECT * FROM feedback ORDER BY id ASC;
+
+DELETE FROM feedback WHERE id=$1;

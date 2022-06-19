@@ -36,7 +36,7 @@ function Admin() {
       <tbody>
         {
         feedbacks.map((feedback, index) => (
-          <AdminFeedback key = {index} myFeedback = {feedback}/>
+          <AdminFeedback key = {index} myFeedback = {feedback} getFeedback = {getFeedback}/>
           ))
         }
       </tbody>
