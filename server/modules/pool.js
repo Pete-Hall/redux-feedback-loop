@@ -4,7 +4,6 @@
 * It will look something like this:
 **/
 
-
 const pg = require('pg');
 const url = require('url');
 let config = {};
