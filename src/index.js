@@ -46,37 +46,39 @@ const understandingReducer = (state = '', action) => {
   return state;
 }
 
-const store = createStore(
-  combineReducers({
-    commentsReducer,
-    feelingReducer,
-    supportReducer,
-    understandingReducer
-  })
-)
+///// The way Dev taught us
+// const store = createStore(
+//   combineReducers({
+//     commentsReducer,
+//     feelingReducer,
+//     supportReducer,
+//     understandingReducer
+//   })
+// )
 
 ///// TRYING TO UNDERSTAND THE ROOT REDUCER /////
 ///// https://www.digitalocean.com/community/tutorials/redux-reset-state-redux
+///// https://stackoverflow.com/questions/59061161/how-to-reset-state-of-redux-store-when-using-configurestore-from-reduxjs-toolki?noredirect=1&lq=1
 ///// the follow code block works, but I get this error/warning: the previous state recieved by the reducer has unexpected type of "string." Expected argument to be an object with the follow keys: "commentsReducer", "feelingReducer", "supportReducer", "understandingReducer"
 
-// const appReducer = combineReducers({
-//   commentsReducer,
-//   feelingReducer,
-//   supportReducer,
-//   understandingReducer
-// })
+const appReducer = combineReducers({
+  commentsReducer,
+  feelingReducer,
+  supportReducer,
+  understandingReducer
+})
 
-// const rootReducer = (state, action) => {
-//   console.log('in rootReducer');
-//   if(action.type === 'RESET_SCORES') {
-//    state = action.payload;
-//   }
-//   return appReducer(state, action)
-// }
+const rootReducer = (state, action) => {
+  console.log('in rootReducer');
+  if(action.type === 'RESET_SCORES') {
+   state = action.payload;
+  }
+  return appReducer(state, action)
+}
 
-// const store = createStore(
-//   rootReducer
-//  )
+const store = createStore(
+  rootReducer
+ )
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();

@@ -10,8 +10,8 @@ function Submitted() {
 
   const restartFeedback = () => {
     console.log('in restartFeedback');
-    dispatch({type: 'SET_RESTART', payload: ''});
-    // dispatch({type: 'RESET_SCORES', payload: ''}); // TRYING TO UNDERSTAND THE ROOT REDUCER
+    // dispatch({type: 'SET_RESTART', payload: ''});
+    dispatch({type: 'RESET_SCORES', payload: ''}); // TRYING TO UNDERSTAND THE ROOT REDUCER
     history.push('/feeling');
   }
 
