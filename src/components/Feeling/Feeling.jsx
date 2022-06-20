@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 function Feeling() {
 
@@ -32,7 +33,7 @@ function Feeling() {
   return(
     <div>
       <h2>How are you feeling today?</h2>
-      <input type="number" placeholder={currentFeeling} onChange={changeFeeling}/>
+      <TextField type="number" placeholder={currentFeeling} onChange={changeFeeling}/>
       <Button onClick={sendFeeling}>NEXT</Button>
       {
         currentFeeling ?

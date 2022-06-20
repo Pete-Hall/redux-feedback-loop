@@ -2,6 +2,8 @@ import axios from 'axios';
 import {useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
+import Button from '@mui/material/Button';
+
 function Review() {
 
   const history = useHistory();
@@ -47,11 +49,11 @@ function Review() {
   return(
     <div>
       <h2>Review Your Feedback</h2>
-      <p>Feelings: {currentFeeling} <button onClick={editFeelings}>Edit</button></p>
-      <p>Understanding: {currentUnderstanding} <button onClick={editUnderstanding}>Edit</button></p>
-      <p>Support: {currentSupport} <button onClick={editSupport}>Edit</button></p>
-      <p>Comments: {currentComments} <button onClick={editComments}>Edit</button></p>
-      <button onClick={submitFeedback}>SUBMIT</button>
+      <p>Feelings: {currentFeeling} <Button color="secondary" onClick={editFeelings}>Edit</Button></p>
+      <p>Understanding: {currentUnderstanding} <Button color="secondary" onClick={editUnderstanding}>Edit</Button></p>
+      <p>Support: {currentSupport} <Button color="secondary" onClick={editSupport}>Edit</Button></p>
+      <p>Comments: {currentComments} <Button color="secondary" onClick={editComments}>Edit</Button></p>
+      <Button onClick={submitFeedback}>SUBMIT</Button>
     </div>
   );
 }

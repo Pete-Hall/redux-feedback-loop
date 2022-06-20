@@ -2,6 +2,9 @@ import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 function Comments() {
 
   const [comments, setComments] = useState('');
@@ -28,8 +31,8 @@ function Comments() {
   return(
     <div>
       <h2>Any comments you want to leave?</h2>
-      <input type="text" placeholder={currentComments} onChange={changeComments}/>
-      <button onClick={sendComments}>NEXT</button>
+      <TextField type="text" placeholder={currentComments} onChange={changeComments}/>
+      <Button onClick={sendComments}>NEXT</Button>
       {
         currentComments ?
         <p> (You can click the next button to save your previously inputted answer or enter a new answer)</p>

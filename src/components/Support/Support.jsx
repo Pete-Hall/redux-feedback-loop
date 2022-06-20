@@ -2,6 +2,9 @@ import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 function Support() {
 
   const [support, setSupport] = useState('');
@@ -29,8 +32,8 @@ function Support() {
   return(
     <div>
       <h2>How well are you being supported?</h2>
-      <input type="number" placeholder={currentSupport} onChange={changeSupport}/>
-      <button onClick={sendSupport}>NEXT</button>
+      <TextField type="number" placeholder={currentSupport} onChange={changeSupport}/>
+      <Button onClick={sendSupport}>NEXT</Button>
       {
         currentSupport ?
         <p> (You can click the next button to save your previously inputted answer or enter a new answer)</p>

@@ -13,18 +13,36 @@ import Understanding from '../Understanding/Understanding';
 import Admin from '../Admin/Admin';
 
 import Typography from '@mui/material/Typography';
-import { createTheme, colors, ThemeProvider } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { colors } from '@mui/material';
 
 
 function App() {
   
-  const theme = createTheme({
+  const theme = createTheme({ // https://mui.com/material-ui/customization/theming/, https://stackoverflow.com/questions/69506133/difference-between-mui-material-styles-and-mui-styles 
     palette: {
       primary: {
         main: colors.orange[500]
+      },
+    },
+    components: { //https://mui.com/material-ui/customization/theme-components/#adding-new-component-variants
+      // Name of the component
+      MuiButton: {
+        defaultProps: {
+          // The default props to change
+          variant: 'contained', 
+          size: 'small'
+        },
+      },
+      MuiTextField: {
+        defaultProps: {
+          variant: 'standard',
+          size: 'small'
+        }
       }
-    }
+    },
   });
+
 
   const currentComments = useSelector(store => store.commentsReducer);
   const currentFeeling = useSelector(store => store.feelingReducer);

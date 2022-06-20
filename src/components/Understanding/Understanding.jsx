@@ -2,6 +2,9 @@ import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 function Understanding() {
 
   const [understanding, setUnderstanding] = useState('');
@@ -31,8 +34,8 @@ function Understanding() {
   return(
     <div>
       <h2>How well are you understanding the content?</h2>
-      <input type="number" placeholder={currentUnderstanding} onChange={changeUnderstanding}/>
-      <button onClick={sendUnderstanding}>NEXT</button>
+      <TextField type="number" placeholder={currentUnderstanding} onChange={changeUnderstanding}/>
+      <Button onClick={sendUnderstanding}>NEXT</Button>
       {
         currentUnderstanding ?
         <p> (You can click the next button to save your previously inputted answer or enter a new answer)</p>
