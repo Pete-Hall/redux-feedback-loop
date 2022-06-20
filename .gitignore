@@ -9,7 +9,7 @@
 # production
 /build
 
-# misc
+# misc (including .env to ignore the .env file I created.)
 .DS_Store
 .env
 .env.local
