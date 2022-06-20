@@ -19,7 +19,8 @@ function Feeling() {
 
   const sendFeeling = () => {
     console.log('in sendFeeling');
-    if(feeling === '' && currentFeeling) { // this conditional is used to send the currentFeeling in the reducer back to the reducer. used if user wants to go back and edit answer. I couldn't figure out how to pre-fill the reducer data and have that input form still be editable
+    if(feeling === '' && currentFeeling) { 
+      // this conditional is used to send the currentFeeling in the reducer back to the reducer. used if user wants to go back and edit answer. I couldn't figure out how to pre-fill the reducer data and have that input form still be editable
       dispatch({type: 'SET_FEELING', payload: currentFeeling});
       history.push('/understanding');
     } else if(feeling === '') {

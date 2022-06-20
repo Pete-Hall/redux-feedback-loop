@@ -56,6 +56,7 @@ const store = createStore(
 )
 
 ///// TRYING TO UNDERSTAND THE ROOT REDUCER /////
+///// https://www.digitalocean.com/community/tutorials/redux-reset-state-redux
 ///// the follow code block works, but I get this error/warning: the previous state recieved by the reducer has unexpected type of "string." Expected argument to be an object with the follow keys: "commentsReducer", "feelingReducer", "supportReducer", "understandingReducer"
 
 // const appReducer = combineReducers({
