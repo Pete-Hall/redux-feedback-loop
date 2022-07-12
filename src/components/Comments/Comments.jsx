@@ -31,7 +31,7 @@ function Comments() {
   return(
     <div>
       <h2>Any comments you want to leave?</h2>
-      <TextField type="text" placeholder={currentComments} onChange={changeComments}/>
+      <TextField type="text" defaultValue={currentComments} onChange={changeComments}/>
       <Button onClick={sendComments}>NEXT</Button>
       {
         currentComments ?

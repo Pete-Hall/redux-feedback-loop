@@ -34,7 +34,7 @@ function Feeling() {
   return(
     <div>
       <h2>How are you feeling today?</h2>
-      <TextField type="number" placeholder={currentFeeling} onChange={changeFeeling}/>
+      <TextField type="number" defaultValue={currentFeeling} onChange={changeFeeling}/>
       <Button onClick={sendFeeling}>NEXT</Button>
       {
         currentFeeling ?

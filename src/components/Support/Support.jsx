@@ -32,7 +32,7 @@ function Support() {
   return(
     <div>
       <h2>How well are you being supported?</h2>
-      <TextField type="number" placeholder={currentSupport} onChange={changeSupport}/>
+      <TextField type="number" defaultValue={currentSupport} onChange={changeSupport}/>
       <Button onClick={sendSupport}>NEXT</Button>
       {
         currentSupport ?

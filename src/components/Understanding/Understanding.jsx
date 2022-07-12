@@ -34,7 +34,7 @@ function Understanding() {
   return(
     <div>
       <h2>How well are you understanding the content?</h2>
-      <TextField type="number" placeholder={currentUnderstanding} onChange={changeUnderstanding}/>
+      <TextField type="number" defaultValue={currentUnderstanding} onChange={changeUnderstanding}/>
       <Button onClick={sendUnderstanding}>NEXT</Button>
       {
         currentUnderstanding ?
