@@ -40,6 +40,7 @@ To locally run the project...
 - PostgreSQL
 - PG
 - Heroku
+- Material-UI
 
 ## Acknowledgement
 
