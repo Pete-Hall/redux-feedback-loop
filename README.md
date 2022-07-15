@@ -11,7 +11,7 @@ The application is [deployed to Heroku](https://tranquil-woodland-72204.herokuap
 
 ![wireframes](wireframes/form-view.png)
 ##
-![wireframes](wireframes/review-view.png)
+![wireframes](wireframes/Screen Shot 2022-07-15 at 6.26.55 PM.png)
 ##
 ![wireframe](wireframes/submitted-view.png)
 ##
