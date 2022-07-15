@@ -63,9 +63,9 @@ function App() {
         <h5>Comments: {currentComments}</h5>
 
         {/* testing Typography component from MUI */}
-        <Typography variant='h5'>
+        {/* <Typography variant='h5'>
           This should be Roboto h5
-        </Typography>
+        </Typography> */}
 
       </header>
 
